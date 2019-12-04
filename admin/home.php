@@ -26,7 +26,13 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li class="nav-item">
-            <a class="nav-link" href="index.html"> Log-In</a>
+            <a class="nav-link" href="home.php"> Home</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="add_book.php"> Add Book</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="remove_book.php"> Remove Book</a>
           </li>
         </ul>
       </div>
@@ -42,12 +48,12 @@
              		<h6 style="padding-top: 10px;">Add Book</h6></a>
              	</div>
              	<div class="col-md-3">
-             		<i class="fa fa-times" style="font-size: 80px" aria-hidden="true"></i>
-             		<h6 style="padding-top: 10px;">Remove Book</h6>
+             		<a href="remove_book.php" ><i class="fa fa-times" style="font-size: 80px" aria-hidden="true"></i>
+             		<h6 style="padding-top: 10px;">Remove Book</h6></a>
              	</div>
              	<div class="col-md-3">
-					<i class="fa fa-user" style="font-size: 80px" aria-hidden="true"></i>
-             		<h6 style="padding-top: 10px;">User Detail</h6>             		
+					<a href="user_detail.php"><i class="fa fa-user" style="font-size: 80px" aria-hidden="true"></i>
+             		<h6 style="padding-top: 10px;">User Detail</h6>  </a>        		
              	</div>
              	<div class="col-md-3">
              		<i class="fa fa-book" style="font-size: 80px" aria-hidden="true"></i>
