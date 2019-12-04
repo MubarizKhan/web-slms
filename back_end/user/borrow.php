@@ -27,7 +27,7 @@
 
     if ($res->num_rows > 0)
     {
-        echo username."<--OFF";
+        // echo username."<--OFF";
         // $row = $res->fetch_assoc();
         $res2 = $con->query($qry_2);
         echo "<script>alert('Book ? Borrowed!')</script>";
