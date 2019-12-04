@@ -14,62 +14,54 @@
 <html>
     <head>
         <title> Borrow a book</title>
+        <link rel="stylesheet" type="text/css" href="../../css/searchbooks.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     </head>
 
 
-<link rel="stylesheet" type="text/css" href="../../css/searchbooks.css">
-<!-- <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> -->
-<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+
     <body class = "v">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                                
-                              
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container collapse navbar-collapse" id="navbarSupportedContent">
                     
-                <a class="navbar-brand" href="#"> <img src="logo-FAST-NU.png" width="90" height="90"> <span id = "space"> Simple Library Management System </span></a>
+                <a class="navbar-brand" href="#"> <img src="./../../logo-FAST-NU.png" width="90" height="90"> <span id = "space"> Simple Library Management System </span></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"> </span>
                     </button>
-            
-
-              <ul class="nav navbar-nav navbar-right">
-                
+        
+              <ul class="nav navbar-nav navbar-right">        
                     <li class="nav-item dropdown" id = "rb">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Users
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="borrow.html">Borrow</a>
-                              <a class="dropdown-item" href="ShowBorrowedBooks.html">Show Borrowed Books</a>
-                              <!-- <a class="dropdown-item" href="overduebooks.html">Over-due Books</a> -->
+                              
+                              <a class="dropdown-item" href="user_details.php">My Details</a>
+                            <a class="dropdown-item" href="user_cp.php">Change Password</a>
+                            <a class="dropdown-item" href="u_logout.php">Log out</a>
                               <div class="dropdown-divider"></div>
                               <!-- <a class="dropdown-item" href="#"></a> -->
                             </div>
                     </li>
-            
               <!-- </ul> -->
-
               <!-- <ul class="nav navbar-nav navbar-right"> -->
-
-            
                     <li class="nav-item dropdown" id = "lb">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Books
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="Viewall.html">View all Books</a>
-                              <!-- <a class="dropdown-item" href="">Show borrowed books</a> -->
-                              <a class="dropdown-item" href="removebooks.html">Remove Books</a>
+                              <a class="dropdown-item" href="VA_books.php">View all Books</a>
+                              <a class="dropdown-item" href="borrow_structure.php">Borrow</a>
+                              <!-- <a class="dropdown-item" href="removebooks.html">Remove Books</a> -->
                               <div class="dropdown-divider"></div>
                               <!-- <a class="dropdown-item" href="#"></a> -->
                             </div>
                     </li>
-            
-                    
               </ul>
             </div>
-          </nav>
+        </nav>
 
 
 
