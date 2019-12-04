@@ -38,8 +38,8 @@
         	</div>
             <div class="row pt-5">
              	<div class="col-md-3">
-             		<i class="fa fa-upload" style="font-size: 80px" aria-hidden="true"></i>
-             		<h6 style="padding-top: 10px;">Add Book</h6>
+             		<a href="add_book.php"><i class="fa fa-upload" style="font-size: 80px" aria-hidden="true"></i>
+             		<h6 style="padding-top: 10px;">Add Book</h6></a>
              	</div>
              	<div class="col-md-3">
              		<i class="fa fa-times" style="font-size: 80px" aria-hidden="true"></i>
