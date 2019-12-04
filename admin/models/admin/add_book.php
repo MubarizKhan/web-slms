@@ -7,6 +7,11 @@
 		die();
 	}
 
+	if($_GET['title'] == "" || $_GET['author'] == "") {
+		echo "Please complete the form !";
+		die();
+	}
+
 	/* Getting values */
 	$t 	 = $_GET['title'];
 	$id  = $_GET['id'];
