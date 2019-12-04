@@ -43,6 +43,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="user_details.php">My Details</a>
                       <a class="dropdown-item" href="user_cp.php">Change Password</a>
+                      <a class="dropdown-item" href="u_logout.php">Log out</a>
                       <!-- <a class="dropdown-item" href="overduebooks.html">Over-due Books</a> -->
                       <div class="dropdown-divider"></div>
                       <!-- <a class="dropdown-item" href="#"></a> -->
@@ -55,9 +56,9 @@
                   Books
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="Viewall.html">View all Books</a>
+                  <a class="dropdown-item" href="VA_books.php">View all Books</a>
                   <!-- <a class="dropdown-item" href="">Show borrowed books</a> -->
-                  <a class="dropdown-item" href="removebooks.html">Borrow a book </a>
+                  <a class="dropdown-item" href="borrow_structure.php">Borrow a book </a>
                   <div class="dropdown-divider"></div>
                   <!-- <a class="dropdown-item" href="#"></a> -->
                 </div>
@@ -184,8 +185,6 @@
 
                 }
                                                 
-                                   
-
             }
                                                                   
                                 
