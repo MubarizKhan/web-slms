@@ -1,10 +1,17 @@
 <?php
-  session_start();
+    session_start();
+    include "connection.php";
+    
+  
 
   if (!isset($_SESSION["roll_no"]))
   {
       header("Location:../../signin.html");
   }
+
+    $roll2 = $_SESSION["roll_no"];
+    // echo $roll2;
+
 
 ?>
 
@@ -13,17 +20,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Borrow a book</title>
-        <link rel="stylesheet" type="text/css" href="../../css/searchbooks.css">
-<!-- <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> -->
-<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+        <title> Updating password </title>
     </head>
 
+ 
 
-
+<link rel="stylesheet" type="text/css" href="./../../css/remove.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+ -->
+ <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     <body class = "v">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container collapse navbar-collapse" id="navbarSupportedContent">
                     
                 <a class="navbar-brand" href="#"> <img src="./../../logo-FAST-NU.png" width="90" height="90"> <span id = "space"> Simple Library Management System </span></a>
@@ -63,61 +71,71 @@
             </div>
         </nav>
 
+        <div class="main-wrapper">
 
+            <div class="body-heading">
+               Change Password  
+            </div>
 
-                  <div class="main-wrapper">
+            <form action="user_cp.php" method="GET">
+                    
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"> Enter your old Password</label>
+                        <input type="password" class="form-control" name="old_pass" id="exampleInputPassword1" placeholder="Password">
+                    </div>
 
-                        <div class="body-heading">
-                            Borrowing a new book!
-                        </div>
+                    <!-- new password -->
 
-                        <form action = "borrow.php" method="POST">
-                                <label for="inputAddress">Book name & Book ID</label>
-                                <div class="row">
-                                  <div class="col">
-                                        
-                                    <input type="text" name = "book_title" class="form-control" placeholder="Book name" required>
-                                  </div>
-                                <!-- </div> -->
-                                  <div class="col">
-                                    <input type="text" name = "book_id" class="form-control" placeholder="Book ID" required>
-                                  </div>
-                                </div>
-                              <!-- </form> -->
-            
-                        <!-- <form action = "back_end/user/borrow.php" method="POST"> -->
-                                <label for="inputAddress">Borrowed by:</label>
-                                <div class="form-group">
-                                        <!-- <label for="inputAddress">Book name</label> -->
-                                        <input type="text" name = "student_name" class="form-control" id="inputAddress" placeholder="Students Name" required>
-                                </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"> Enter New Password</label>
+                        <input type="password" class="form-control" name="new_pass1" id="exampleInputPassword1" placeholder="Password">
+                    </div>
 
-                                <div class="form-group">
-                                        <!-- <label for="inputAddress">Book name</label> -->
-                                        <input type="text" name = "roll_no" class="form-control" id="inputAddress" placeholder="Roll Number" required>
-                                </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"> Re-Enter your new Password</label>
+                        <input type="password" class="form-control" name="new_pass2" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    
+                    <button type="submit" href="back_end/user/user_details.php" class="btn btn-primary">Submit</button>
+                    </form>
+                    </div>
+                    <?php
+                        print_r($_GET);
+                        if(isset($_GET['old_pass'])){
+                            $oldpw = $_GET['old_pass'];
+                            $newpw1 = $_GET['new_pass1'];
+                            $newpw2 = $_GET['new_pass2'];
 
-                                <div class="form-group">
-                                    <!-- <label for="inputAddress">Book name</label> -->
-                                    <input type="text" name = "Serial_BookID" class="form-control" id="inputAddress" placeholder="Serial Book ID" required>
-                            </div>
+                            $qry = "UPDATE _user_ SET u_password='".$newpw1."' WHERE roll_no='".$roll2."' ";
+                            if ($newpw1 == $newpw2)
+                            {
+                                if ($con->query($qry))
+                                {
+                                    echo "<script>alert('Password changed')</script>";
+                                }
 
-                                <div class="form-group">
-                                        <!-- <label for="inputAddress">Book name</label> -->
-                                        <input type="text" name = "date" class="form-control" id="inputAddress" placeholder="Date" required>
-                                </div>
+                                else
+                                {
+                                    echo "Query main laanjha ae";
+                                }
+                            }
 
-                                <button type="submit" class="btn btn-dark bxn">Borrow!</button>
+                            else
+                            {
+                                echo " Re-Enter your new passwords; as they aren't the same";
+                            }
 
-                        </form>
-                        </div>
+                        }
+                        
+
+                    ?>
+
                         <footer class="main-footer">
 
                             &copy Mubeen Ghauri P176107 & Mubariz Khan P180010 | FAST-NU | 2019-2020
                           </footer>   
-               
 
-       
+                          
                         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
                         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
