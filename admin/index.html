@@ -13,8 +13,8 @@
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             // document.getElementById("demo").innerHTML = this.responseText;
-            if(this.responseText == "1  Right pass") {
-              window.location.href = "http://localhost/web-slms/admin/home.php";
+            if(this.responseText == "1Right pass") {
+              window.location.href = "http://localhost/slms/admin/home.php";
             } else {
               alert(this.responseText);  
             }
@@ -23,7 +23,7 @@
         };
         var name = document.getElementById("adminName").value;
         var pass = document.getElementById('adminPass').value;
-       xhttp.open("GET", "http://localhost/web-slms/admin/models/admin/admin_signin.php?admin_id="+name+"&pass="+pass, true);
+       xhttp.open("GET", "http://localhost/slms/admin/models/admin/admin_signin.php?admin_id="+name+"&pass="+pass, true);
        xhttp.send();
         console.log("posted request");
       }
