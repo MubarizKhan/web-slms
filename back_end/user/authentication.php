@@ -30,7 +30,6 @@ include "./connection.php";
 
         else
         {
-            
             $msg = "pw incorrect";
             echo $msg;
         }
