@@ -1,7 +1,7 @@
 <?php
 
 $server = "localhost";
-$user = "mubeen";
+$user = "root";
 $pass = "";
 $dbname = "slms";
 
