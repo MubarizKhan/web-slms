@@ -13,7 +13,7 @@
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             // document.getElementById("demo").innerHTML = this.responseText;
-            if(this.responseText == "1  Right pass") {
+            if(this.responseText == "1Right pass") {
               window.location.href = "http://localhost/web-slms/admin/home.php";
             } else {
               alert(this.responseText);  
@@ -38,7 +38,13 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li class="nav-item">
-            <a class="nav-link" href="index.html"> Log-In</a>
+            <a class="nav-link" href="home.php"> Home</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="add_book.php"> Add Book</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="remove_book.php"> Remove Book</a>
           </li>
         </ul>
       </div>
