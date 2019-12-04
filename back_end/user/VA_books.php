@@ -47,7 +47,7 @@
                               
                               <a class="dropdown-item" href="user_details.php">My Details</a>
                             <a class="dropdown-item" href="user_cp.php">Change Password</a>
-                            <a class="dropdown-item" href="user_cp.php">Log out</a>
+                            <a class="dropdown-item" href="u_logout.php">Log out</a>
                               <div class="dropdown-divider"></div>
                               <!-- <a class="dropdown-item" href="#"></a> -->
                             </div>
@@ -60,7 +60,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="VA_books.php">View all Books</a>
-                              <a class="dropdown-item" href="borrow.html">Borrow</a>
+                              <a class="dropdown-item" href="borrow_structure.php">Borrow</a>
                               <!-- <a class="dropdown-item" href="removebooks.html">Remove Books</a> -->
                               <div class="dropdown-divider"></div>
                               <!-- <a class="dropdown-item" href="#"></a> -->
