@@ -31,7 +31,7 @@
         var g   = document.getElementById('genre').value;
         var sno = document.getElementById('serial_no').value;
 
-        var url =  "http://localhost/web-slms/admin/models/admin/add_book.php?title="+t+"&id="+id+"&author="+a+"&publisher="+p+"&genre="+g+"&sno="+sno;
+        var url =  "http://localhost/slms/admin/models/admin/add_book.php?title="+t+"&id="+id+"&author="+a+"&publisher="+p+"&genre="+g+"&sno="+sno;
         console.log(url);
 
         xhttp.open("GET",url, true);
