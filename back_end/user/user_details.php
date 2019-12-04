@@ -42,7 +42,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="user_details.php">My Details</a>
-                      <a class="dropdown-item" href="ShowBorrowedBooks.html">Change Password</a>
+                      <a class="dropdown-item" href="user_cp.php">Change Password</a>
                       <!-- <a class="dropdown-item" href="overduebooks.html">Over-due Books</a> -->
                       <div class="dropdown-divider"></div>
                       <!-- <a class="dropdown-item" href="#"></a> -->
@@ -73,7 +73,7 @@
           <div class="main-wrapper">
 
             <div class="body-heading">
-                Sign In Admins!
+                Sign In Users!
             </div>
         
            
