@@ -8,11 +8,11 @@
   {
       header("Location:../../signin.html");
   }
-  else
-  {
-    echo "<script>alert('Book Borrowed!')</script>";
+//   else
+//   {
+//     echo "<script>alert('Book Borrowed!')</script>";
     $roll2 = $_SESSION["roll_no"];
-  }
+//   }
 
 ?>
 
@@ -23,7 +23,7 @@
         <title> User details </title>
     </head>
 
-    <link rel="stylesheet" type="text/css" href="../css/../ud.css">
+    <link rel="stylesheet" type="text/css" href="./../../css/ud.css">
     
 <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
@@ -31,7 +31,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
             <a class="navbar-brand ">
-                <img src="logo-FAST-NU.png" width="90" height="90" alt=""> 
+                <img src="./../../logo-FAST-NU.png" width="90" height="90" alt=""> 
                 <span class="main-heading">Simple Library Management System</span>
             </a>
 
@@ -41,9 +41,9 @@
                       Users
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="borrow.html">Borrow</a>
-                      <a class="dropdown-item" href="ShowBorrowedBooks.html">Show Borrowed Books</a>
-                      <a class="dropdown-item" href="overduebooks.html">Over-due Books</a>
+                      <a class="dropdown-item" href="user_details.php">My Details</a>
+                      <a class="dropdown-item" href="ShowBorrowedBooks.html">Change Password</a>
+                      <!-- <a class="dropdown-item" href="overduebooks.html">Over-due Books</a> -->
                       <div class="dropdown-divider"></div>
                       <!-- <a class="dropdown-item" href="#"></a> -->
                     </div>
@@ -57,7 +57,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="Viewall.html">View all Books</a>
                   <!-- <a class="dropdown-item" href="">Show borrowed books</a> -->
-                  <a class="dropdown-item" href="removebooks.html">Remove Books</a>
+                  <a class="dropdown-item" href="removebooks.html">Borrow a book </a>
                   <div class="dropdown-divider"></div>
                   <!-- <a class="dropdown-item" href="#"></a> -->
                 </div>
@@ -92,12 +92,13 @@
                             </ul>
                         </div>
                         <div class="col-md-6">
-                            <strong>Information</strong><br>
+                            <strong>My Profile</strong><br>
 
                             <?php 
                                 $qry = "SELECT * FROM _user_ WHERE roll_no = '".$_SESSION["roll_no"]."'";
                                 $res = $con->query($qry);
-                                echo "hellp";
+                                // echo $qry;
+                                // echo "hellp";
                                 $result = "";
 
                             if ($res->num_rows > 0)
@@ -109,114 +110,85 @@
                                     <tr>        
                                         <td>
                                             <strong>
-                                                <span class='glyphicon glyphicon-asterisk text-primary'></span>
-                                                Identification                                                
+                                            <span class='glyphicon glyphicon-asterisk text-primary'></span>
+                                                ID                                               
                                             </strong>
                                         </td>";
 
                                     while($row = $res->fetch_assoc())
                                     {
-                                        $result .= "<td class='text-primary'>
-                                            .$roll2.
-                                            </td>";
-                                    
-                                    }
-                                                
-                                    $result .= " </td>
+                                        $result .= "<td class='text-primary'>".$row['roll_no']." </td>";
+                                        $result .= " </td>
                                     </tr>
-                                    <tr>    
-                                        <td>
-                                            <strong>
+                                        <tr>    
+                                            <td>
+                                                <strong>
                                                 <span class='glyphicon glyphicon-user  text-primary'></span>    
                                                 Name                                                
-                                            </strong>
-                                        </td>";
-
-                                while($row = $res->fetch_assoc())
-                                {
-
-                                    $result .=  "<td class='text-primary'>.$row['u_name'].</td>";
-                                                 
-                                }  
-                                    </tr>
-                                    <tr>        
-                                        <td>
-                                            <strong>
-                                                <span class='glyphicon glyphicon-cloud text-primary'></span>  
-                                                Lastname                                                
-                                            </strong>
-                                        </td>
-                                        <td class='text-primary'>";
-                                            Bootstrap  
-                                        </td>
-                                    </tr>
-                
+                                                </strong>
+                                            </td>";
+                                    
+                                            $result .=  "<td class='text-primary'>".$row['u_name']."</td>";
+                                            $result .= "   </tr>
+                                            <tr>        
+                                                <td>
+                                                    <strong>
+                                                    <span class='glyphicon glyphicon-cloud text-primary'></span>  
+                                                    Blood group                                                
+                                                    </strong>
+                                                </td>";
+                                $result .= " <td class='text-primary'>".$row['blood_group']."</td>";
+                                $result .= " </tr>
+                                    
                                     <tr>        
                                         <td>
                                             <strong>
                                                 <span class='glyphicon glyphicon-bookmark text-primary'></span> 
-                                                Username                                                
+                                                Address                                                
                                             </strong>
-                                        </td>
-                                        <td class='text-primary'>
-                                            bootnipets 
-                                        </td>
-                                    </tr>
+                                        </td>";
+                                    
+                                    $result .= " <td class='text-primary'> ".$row['u_address']." </td>";
+                                    $result .= "   </tr>
                 
-                
-                                    <tr>        
-                                        <td>
-                                            <strong>
-                                                <span class='glyphicon glyphicon-eye-open text-primary'></span> 
-                                                Role                                                
-                                            </strong>
-                                        </td>
-                                        <td class='text-primary'>
-                                            Admin
-                                        </td>
-                                    </tr>
-                                    <tr>        
-                                        <td>
-                                            <strong>
-                                                <span class='glyphicon glyphicon-envelope text-primary'></span> 
-                                                Email                                                
-                                            </strong>
-                                        </td>
-                                        <td class='text-primary'>
-                                            noreply@email.com  
-                                        </td>
-                                    </tr>
-                                    <tr>        
-                                        <td>
-                                            <strong>
-                                                <span class='glyphicon glyphicon-calendar text-primary'></span>
-                                                created                                                
-                                            </strong>
-                                        </td>
-                                        <td class='text-primary'>
-                                            20 jul 20014
-                                        </td>
-                                    </tr>
-                                    <tr>        
-                                        <td>
-                                            <strong>
-                                                <span class='glyphicon glyphicon-calendar text-primary'></span>
-                                                Modified                                                
-                                            </strong>
-                                        </td>
-                                        <td class='text-primary'>
-                                             20 jul 20014 20:00:00
-                                        </td>
-                                    </tr>                                    
-                                </tbody>
-                            </table>
+                                    <span class='glyphicon glyphicon-eye-open text-primary></span>
+                                        Role                                                
+                                    </strong>
+                                </td>
+                                <td class='text-primary'>
+                                    User email
+                                </td>
+                            </tr>
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <span class='glyphicon glyphicon-envelope text-primary'></span> 
+                                        Email                                                
+                                    </strong>
+                                </td>";
+
+
+                                $result.= "<td class='text-primary'> ".$row['u_email']."</td>;
+                                </tr>";
+                                    
+
+                                $result .= "  </tbody>
+                                </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                </div>                                        
-        </div>";
-        echo $result;
+                    </div>                                        
+            </div>";
+            echo $result;
+
+                }
+                                                
+                                   
+
+            }
+                                                                  
+                                
 
         ?>
         <footer class="main-footer">
