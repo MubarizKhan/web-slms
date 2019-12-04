@@ -90,6 +90,8 @@ insert into _user_(u_name, u_password, roll_no,  u_address,  blood_group, city, 
     'mubeen', 'been', 'P17-6107', '353, D4, Hayatabad, Peshawar', 'B+', 'lahore',  'ghauri.mubeen@gmail.com'
 );
 
+insert into administrator(a_name, a_password) values ("root", "root");
+
 
 
 
