@@ -15,22 +15,22 @@
 	/* Getting values */
 	$t 	 = $_GET['title'];
 	$id  = $_GET['id'];
-	$a 	 = $_GET['author'];
-	$p 	 = $_GET['publisher'];
-	$g 	 = $_GET['genre'];
-	$sno = $_GET['sno'];
+	// $a 	 = $_GET['author'];
+	// $p 	 = $_GET['publisher'];
+	// $g 	 = $_GET['genre'];
+	// $sno = $_GET['sno'];
 
 	/* Forming Query */
-	$qry = "insert into books(title, book_id, author, publisher, genre, serial_book_id)
-	values ('".$t."', '".$id."', '".$a."', '".$p."', '".$g."', '".$sno."')";
+	$qry = "delete from books where book_id='".$id."'";
+	echo $qry;
 
 	//echo $qry;
 	
 	
 	if($con->query($qry)){
-		echo "Book Added Succesfully!";
+		echo "Book Removed Succesfully!";
 	} else {
-		echo "Something went wrong adding the book :(";
+		echo "Something went wrong removing the book :(";
 	}
 
 

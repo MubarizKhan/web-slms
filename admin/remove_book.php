@@ -9,11 +9,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Add Book | Admin </title>
-  
+    <title> Remove Book | Admin </title>
 
-  <script type="text/javascript">
-    function addBook() {
+    <script type="text/javascript">
+    function removeBook() {
       console.log("[verifyLogin] verifying...");
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -31,7 +30,7 @@
         var g   = document.getElementById('genre').value;
         var sno = document.getElementById('serial_no').value;
 
-        var url =  "http://localhost/slms/admin/models/admin/add_book.php?title="+t+"&id="+id+"&author="+a+"&publisher="+p+"&genre="+g+"&sno="+sno;
+        var url =  "http://localhost/web-slms/admin/models/admin/remove_book.php?title="+t+"&id="+id+"&author="+a+"&publisher="+p+"&genre="+g+"&sno="+sno;
         console.log(url);
 
         xhttp.open("GET",url, true);
@@ -39,7 +38,7 @@
         xhttp.send();
         console.log("posted request");
     }
-  </script>
+    </script>
 
   <link rel="stylesheet" type="text/css" href="./../css/index.css">
   <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
@@ -65,10 +64,10 @@
         </ul>
       </div>
       </nav>
-
-      <div class="main-wrapper">
+	
+	<div class="main-wrapper">
          <div class="heading">
-           <h1>Add Book</h1>
+           <h1>Remove Book</h1>
          </div>
       <div class="form">
         <div class="form-group pt-3">
@@ -100,11 +99,14 @@
               <label for="serial_no">Serial No</label>
               <input type="text" class="form-control" name="serial_no" id="serial_no" placeholder="Serial No">
              </div>
-          </div>
-          <center><button onclick="addBook()" style="align-self: center;" class="btn btn-secondary mt-5">Add !</button></center>
+          </div>	
+          <center><button onclick="removeBook()" style="align-self: center;" class="btn btn-secondary mt-5">Remove !</button></center>
       </div>
          
       </div>
+
+
+
       <footer class="main-footer">
           &copy Mubeen Ghauri P176107 & Mubariz Khan P180010 | FAST-NU | 2019-2020
         </footer>

@@ -1,10 +1,13 @@
 <?php
   session_start();
+  include "connection.php";
 
   if (!isset($_SESSION["roll_no"]))
   {
       header("Location:../../signin.html");
   }
+
+  
 
 ?>
 
@@ -26,7 +29,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container collapse navbar-collapse" id="navbarSupportedContent">
                     
-                <a class="navbar-brand" href="#"> <img src="./../../logo-FAST-NU.png" width="90" height="90"> <span id = "space"> Simple Library Management System </span></a>
+                <a class="navbar-brand" href="#"> <img src="./../../logo-FAST-NU.png" width="90" height="90"> <span id = "space"> <?php echo "Welcome "."".$_SESSION["roll_no"]; ?> </span></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"> </span>
                     </button>
@@ -64,53 +67,56 @@
         </nav>
 
 
-
-                  <div class="main-wrapper">
-
-                        <div class="body-heading">
-                            Borrowing a new book!
-                        </div>
-
-                        <form action = "borrow.php" method="POST">
-                                <label for="inputAddress">Book name & Book ID</label>
-                                <div class="row">
-                                  <div class="col">
-                                        
-                                    <input type="text" name = "book_title" class="form-control" placeholder="Book name" required>
-                                  </div>
-                                <!-- </div> -->
-                                  <div class="col">
-                                    <input type="text" name = "book_id" class="form-control" placeholder="Book ID" required>
-                                  </div>
-                                </div>
-                              <!-- </form> -->
+        <div class="main-wrapper">
+                <div class="body-heading">
+                    Borrow Books
+                </div>
+    
             
-                        <!-- <form action = "back_end/user/borrow.php" method="POST"> -->
-                                <label for="inputAddress">Borrowed by:</label>
-                                <div class="form-group">
-                                        <!-- <label for="inputAddress">Book name</label> -->
-                                        <input type="text" name = "student_name" class="form-control" id="inputAddress" placeholder="Students Name" required>
-                                </div>
+                        
+            <?php
 
-                                <div class="form-group">
-                                        <!-- <label for="inputAddress">Book name</label> -->
-                                        <input type="text" name = "roll_no" class="form-control" id="inputAddress" placeholder="Roll Number" required>
-                                </div>
+                $qry = "SELECT * FROM books ORDER BY book_id DESC";
+                $res = $con->query($qry);
+                $result = "";
 
-                                <div class="form-group">
-                                    <!-- <label for="inputAddress">Book name</label> -->
-                                    <input type="text" name = "Serial_BookID" class="form-control" id="inputAddress" placeholder="Serial Book ID" required>
-                            </div>
+                if($res->num_rows > 0)
+                { 
 
-                                <div class="form-group">
-                                        <!-- <label for="inputAddress">Book name</label> -->
-                                        <input type="text" name = "date" class="form-control" id="inputAddress" placeholder="Date" required>
-                                </div>
+                    $result .= "<div class = 'vv'>";
+                    $result .= "<table class='table table-striped'>";
+                    $result .= "<thead> <tr>            
+                        
+                        <th>Book Name</th>
+                        <th>Author</th>
+                        <th>Book ID</th>            
+                        <th>Genre</th>
+                        <th>Borrow</th>
 
-                                <button type="submit" class="btn btn-dark bxn">Borrow!</button>
+                        </tr> </thead>" ;
+                    
+                        $result .= "<tbody> <tr>";
+                        
+                    while($row = $res->fetch_assoc())
+                    {                                          
+                      $result .= "  <td>" .$row['title']. "</td>
+                                    <td>" .$row['author']. "</td>
+                                    <td>" .$row['book_id']. "</td>
+                                    <td>" .$row['genre']. "</td>
+                                    <td>  <button type='submit' class='btn btn-dark bxn'>Borrow!</button> </td>
+                                    </tr>";
+                                    
+                    }
 
-                        </form>
-                        </div>
+                    $result .= " 
+                                 </tbody> </table>
+                              </table> </div> </div> ";
+                    echo $result;
+                }
+
+                
+
+            ?>
                         <footer class="main-footer">
 
                             &copy Mubeen Ghauri P176107 & Mubariz Khan P180010 | FAST-NU | 2019-2020
