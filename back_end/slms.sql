@@ -81,7 +81,7 @@ insert into books(title, book_id, author, publisher, genre, serial_book_id) VALU
 
 insert into _user_(u_name, u_password, roll_no, u_address, blood_group, city, u_email) VALUES
 (
-    'mubariz', 'mak', 'P180010', '353, D4, Hayatabad, Peshawar', 'B+','lahore', 'mx@gmail.com'
+    'mubariz', 'mak', 'P180010', '563, W4, Hayatabad, Peshawar', 'B+','lahore', 'mx@gmail.com'
 );
 
 
