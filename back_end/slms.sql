@@ -81,13 +81,13 @@ insert into books(title, book_id, author, publisher, genre, serial_book_id) VALU
 
 insert into _user_(u_name, u_password, roll_no, u_address, blood_group, city, u_email) VALUES
 (
-    'mubariz', 'mak', 'P180010', '353, D4, Hayatabad, Peshawar', 'B+','lahore', 'mubariskhan.xo@gmail.com'
+    'mubariz', 'mak', 'P180010', '353, D4, Hayatabad, Peshawar', 'B+','lahore', 'mx@gmail.com'
 );
 
 
 insert into _user_(u_name, u_password, roll_no,  u_address,  blood_group, city, u_email ) VALUES
 (
-    'mubeen', 'been', 'P17-6107', '353, D4, Hayatabad, Peshawar', 'B+', 'lahore',  'ghauri.mubeen@gmail.com'
+    'mubeen', 'been', 'P17-6107', '563, W4, Hayatabad, Peshawar', 'B+', 'lahore',  'ghauri.mubeen@gmail.com'
 );
 
 insert into administrator(a_name, a_password) values ("root", "root");
